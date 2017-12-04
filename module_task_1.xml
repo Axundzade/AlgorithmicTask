@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_task_1" default="compile.module.task_1">
+  <dirname property="module.task_1.basedir" file="${ant.file.module_task_1}"/>
+  
+  <property name="module.jdk.home.task_1" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.task_1" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.task_1" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.task_1" value="-encoding UTF-8 -source 1.8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="task_1.output.dir" value="${module.task_1.basedir}/out/production/Task_1"/>
+  <property name="task_1.testoutput.dir" value="${module.task_1.basedir}/out/test/Task_1"/>
+  
+  <path id="task_1.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="task_1.module.production.classpath">
+    <path refid="${module.jdk.classpath.task_1}"/>
+    <path refid="library.jfoenix.classpath"/>
+  </path>
+  
+  <path id="task_1.runtime.production.module.classpath">
+    <pathelement location="${task_1.output.dir}"/>
+    <path refid="library.jfoenix.classpath"/>
+  </path>
+  
+  <path id="task_1.module.classpath">
+    <path refid="${module.jdk.classpath.task_1}"/>
+    <pathelement location="${task_1.output.dir}"/>
+    <path refid="library.jfoenix.classpath"/>
+  </path>
+  
+  <path id="task_1.runtime.module.classpath">
+    <pathelement location="${task_1.testoutput.dir}"/>
+    <pathelement location="${task_1.output.dir}"/>
+    <path refid="library.jfoenix.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.task_1">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.task_1">
+    <patternset refid="excluded.from.module.task_1"/>
+  </patternset>
+  
+  <path id="task_1.module.sourcepath">
+    <dirset dir="${module.task_1.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.task_1" depends="compile.module.task_1.production,compile.module.task_1.tests" description="Compile module Task_1"/>
+  
+  <target name="compile.module.task_1.production" depends="register.custom.compilers" description="Compile module Task_1; production classes">
+    <mkdir dir="${task_1.output.dir}"/>
+    <javac2 destdir="${task_1.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.task_1}/javac">
+      <compilerarg line="${compiler.args.task_1}"/>
+      <bootclasspath refid="task_1.module.bootclasspath"/>
+      <classpath refid="task_1.module.production.classpath"/>
+      <src refid="task_1.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.task_1"/>
+    </javac2>
+    
+    <copy todir="${task_1.output.dir}">
+      <fileset dir="${module.task_1.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.task_1.tests" depends="register.custom.compilers,compile.module.task_1.production" description="compile module Task_1; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.task_1" description="cleanup module">
+    <delete dir="${task_1.output.dir}"/>
+    <delete dir="${task_1.testoutput.dir}"/>
+  </target>
+</project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Task_1.jnlp">
+  <information>
+    <title>Task</title>
+    <vendor>Task</vendor>
+    <description>Task_1</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Task_1.jar" size="9679" download="eager" />
+    <jar href="jfoenix.jar" size="2386535" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="340" height="367" main-class="taskpck.Main"  name="Task_1" />
+  <update check="background"/>
+</jnlp>

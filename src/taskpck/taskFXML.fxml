@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #372159;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taskpck.Controller">
+   <children>
+      <AnchorPane layoutX="425.0" layoutY="4.0" prefHeight="400.0" prefWidth="161.0" style="-fx-background-color: #7a48dd;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXRadioButton fx:id="ClockWise" graphicTextGap="1.0" layoutX="7.0" layoutY="14.0" lineSpacing="1.0" selected="true" style="-jfx-selected-color: #b9f7bf;" text="ClockWise" textFill="WHITE" AnchorPane.topAnchor="34.0">
+               <font>
+                  <Font name="Segoe UI Bold Italic" size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="InOut" graphicTextGap="1.0" layoutX="7.0" layoutY="81.0" lineSpacing="1.0" style="-jfx-selected-color: #b9f7bf;" text="In_Out" textFill="WHITE" toggleGroup="$group" AnchorPane.topAnchor="114.0">
+               <font>
+                  <Font name="Segoe UI Bold Italic" size="14.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="AntiClockWise" graphicTextGap="1.0" layoutX="7.0" layoutY="46.0" lineSpacing="1.0" style="-jfx-selected-color: #b9f7bf;" text="AntiClockWise" textFill="WHITE" toggleGroup="$group" AnchorPane.topAnchor="74.0">
+               <font>
+                  <Font name="Segoe UI Bold Italic" size="14.0" />
+               </font>
+            </JFXRadioButton>
+         </children>
+      </AnchorPane>
+      <Label fx:id="Close" layoutX="465.0" layoutY="74.0" onMouseClicked="#CloseLabel" text="X" textFill="WHITE" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="L0" layoutX="248.0" layoutY="100.0" maxWidth="500.0" text="Label" textFill="WHITE" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="100.0">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="L1" layoutX="245.0" layoutY="153.0" textFill="WHITE" AnchorPane.topAnchor="150.0">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font></Label>
+      <Label fx:id="L2" layoutX="245.0" layoutY="195.0" textFill="WHITE" AnchorPane.topAnchor="200.0">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font></Label>
+      <Label fx:id="L3" layoutX="245.0" layoutY="234.0" textFill="WHITE" AnchorPane.topAnchor="250.0">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,29 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" build-on-make="true" name="Task_1">
+    <output-path>$PROJECT_DIR$/out/artifacts/Task_1</output-path>
+    <properties id="ant-postprocessing">
+      <options enabled="true" />
+    </properties>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="taskpck.Main" />
+        <option name="description" value="" />
+        <option name="height" value="367" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="Task" />
+        <option name="vendor" value="Task" />
+        <option name="version" value="1.0" />
+        <option name="width" value="340" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Task_1.jar">
+        <element id="module-output" name="Task_1" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+      <element id="library" level="project" name="jfoenix" />
+    </root>
+  </artifact>
+</component>
